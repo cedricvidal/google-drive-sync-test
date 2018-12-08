@@ -15,3 +15,6 @@ deploy:
     branch: build
 before_install:
 - echo $GPG_KEY | gpg --passphrase-fd 0 service-account.json.gpg
+branches:
+  only:
+  - build
