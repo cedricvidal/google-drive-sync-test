@@ -15,14 +15,8 @@ SERVICE_ACCOUNT_FILE = 'github-sync-1544114877406-1549bf038439.json'
 
 def main():
 
-    sa_json = os.environ['GOOGLE_SERVICE_ACCOUNT_JSON']
-    print("SA %s" % sa_json)
-    service_account_info = json.loads(sa_json)
-    credentials = service_account.Credentials.from_service_account_info(
-        service_account_info)
-
-#    credentials = service_account.Credentials.from_service_account_file(
-#        SERVICE_ACCOUNT_FILE, scopes=SCOPES)
+    credentials = service_account.Credentials.from_service_account_file(
+        os.getenv('GOOGLE_APPLICATION_CREDENTIALS', './service-account.json'), scopes=SCOPES)
 
     drive_service = build('drive', 'v3', credentials=credentials)
 
