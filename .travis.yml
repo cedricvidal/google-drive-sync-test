@@ -14,5 +14,4 @@ deploy:
   on:
     branch: build
 before_install:
-- openssl aes-256-cbc -K $encrypted_748563dc5f3b_key -iv $encrypted_748563dc5f3b_iv
-  -in service-account.json.enc -out service-account.json -d
+- echo $GPG_KEY | gpg --passphrase-fd 0 service-account.json.gpg
