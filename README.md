@@ -15,5 +15,5 @@ Google Sheet -> Github repository -> Knative Build with Drools Server buildpack.
 | Environment variable   | Description                                                                          |
 |------------------------|--------------------------------------------------------------------------------------|
 | `GITHUB_TOKEN`         | Used to push the `./build` directory to the `master` branch                          |
-| `GOOGLE_SHEET_FILE_ID` | Is of the Google Sheet document to export as Excel                                   |
+| `GOOGLE_SHEET_FILE_ID` | ID of the Google Sheet document to export as Excel                                   |
 | `GPG_KEY`              | GPG key used to decrypt the GCP Service Account JSON file `service-account.json.gpg` |
