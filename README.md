@@ -2,7 +2,9 @@
 
 ## Overview
 
-Google Sheet -> Github repository -> Knative Build with Drools Server buildpack.
+Google Sheet -> TravisCI + Github repository @ `build` -> Github repository @ `master` -> [Knative Build with Drools Server buildpack.]
+
+NB: The Knative build part is not done yet and could be replaced with a direct docker image build.
 
 ## Workflow
 
