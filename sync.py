@@ -7,11 +7,8 @@ from apiclient.http import MediaIoBaseDownload
 import pathlib
 import json
 
-
-# If modifying these scopes, delete the file token.json.
-#SCOPES = ['https://www.googleapis.com/auth/drive.metadata.readonly']
+# Default scope seems to be sufficient
 SCOPES = []
-SERVICE_ACCOUNT_FILE = 'github-sync-1544114877406-1549bf038439.json'
 
 def main():
 
