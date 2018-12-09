@@ -2,15 +2,15 @@
 
 ## Overview
 
-Google Sheet -> TravisCI + Github repository @ `build` -> Github repository @ `master` -> [Knative Build with Drools Server buildpack.]
+Google Sheet document -> TravisCI + Github repository @ `build` -> Github repository @ `master` as Excel document -> [Knative Build with Drools Server buildpack.]
 
 NB: The Knative build part is not done yet and could be replaced with a direct docker image build.
 
 ## Workflow
 
-- The `build` branch of this repository is built by [Travis CI](https://travis-ci.com).
+- Google Sheet user triggers the [Travis CI](https://travis-ci.com) job on branch `build` using some Google Script code.
 - Travis CI invokes the `sync.py` script
-- The `sync.py` script exports a Google Sheet identified by the `GOOGLE_SHEET_FILE_ID` environement variable as an Excel file in the `./build/` directory which is then exported to the `master` branch.
+- The `sync.py` script exports a Google Sheet identified by the `GOOGLE_SHEET_FILE_ID` environement variable as an Excel document in the `./build/` directory which is then exported to the `master` branch using the TravisCI `pages` plugin.
 
 ## Environment variables
 
