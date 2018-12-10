@@ -20,6 +20,13 @@ NB: The Knative build part is not done yet and could be replaced with a direct d
 | `GOOGLE_SHEET_FILE_ID` | ID of the Google Sheet document to export as Excel                                   |
 | `GPG_KEY`              | GPG key used to decrypt the GCP Service Account JSON file `service-account.json.gpg` |
 
+## Mutual authentication (Callback mechanism)
+
+- The Google Script which triggers the TravisCI build authenticates using a TravisCI `API Token`.
+- The TravisCI build authenticates using a GCP Service Account JSON file encrypted using GPG using a key stored as a TravisCI secure variable.
+
+The TravisCI build doesn't take for granted what it receives from the web trigger, it fetches itself the Google Sheet document from GCP. Both sides verify the other.
+
 ## Sample Google Script to trigger the Github build
 
 Paste the following code in the Google Sheet script editor and replace the `<YOUR_TRAVISCI_TOKEN>`, `branch`, `user` and `repo` parameters :
