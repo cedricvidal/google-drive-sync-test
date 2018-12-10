@@ -6,6 +6,8 @@ Google Sheet document -> TravisCI + Github repository @ `build` -> Github reposi
 
 NB: The Knative build part is not done yet and could be replaced with a direct docker image build.
 
+![](doc/google-sheet-decision-table.png)
+
 ## Workflow
 
 - Google Sheet user triggers the [Travis CI](https://travis-ci.com) job on branch `build` using some Google Script code.
